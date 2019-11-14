@@ -10,6 +10,19 @@
   </head>
 
   <body>
-    <%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <nav>
+    <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "Home", posts_path %></li>
+        <li><%= link_to "New Post", new_post_path %></li>
+      <%else %>
+        <li><%= link_to "Sign in", new_user_session_path %></li>
+      <%end %>
+    </ul>
+  </nav>
+  <%= yield %>
   </body>
 </html>

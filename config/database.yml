@@ -20,15 +20,12 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  password: password1
-  username: myapp
+
 
 development:
   <<: *default
   database: odin_facebook_development
   pool: 5
-  username: myapp
-  password: password1
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -89,4 +86,3 @@ production:
   database: odin_facebook_production
   username: odin_facebook
   #  password: <%= ENV['ODIN_FACEBOOK_DATABASE_PASSWORD'] %>
-  password: password1
