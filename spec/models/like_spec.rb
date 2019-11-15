@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
@@ -7,11 +9,11 @@ RSpec.describe Like, type: :model do
   end
   describe 'not valid' do
     context 'when' do
-      it "has no author" do
+      it 'has no author' do
         @like = @post.likes.build
         expect(@like).to_not be_valid
       end
-      it "has no post" do
+      it 'has no post' do
         @like = Like.new user_id: @user.id
         expect(@like).to_not be_valid
       end

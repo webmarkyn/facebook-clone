@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
-  before_action :set_like, only: [:show, :edit, :update, :destroy]
+  before_action :set_like, only: %i[show edit update destroy]
 
   # GET /likes
   # GET /likes.json
@@ -9,12 +11,10 @@ class LikesController < ApplicationController
 
   # GET /likes/1
   # GET /likes/1.json
-  def show
-  end
+  def show; end
 
   # GET /likes/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /likes
   # POST /likes.json
@@ -57,13 +57,14 @@ class LikesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_like
-      @like = Like.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def like_params
-      params.require(:like).permit(:user_id, :post_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_like
+    @like = Like.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def like_params
+    params.require(:like).permit(:user_id, :post_id)
+  end
 end

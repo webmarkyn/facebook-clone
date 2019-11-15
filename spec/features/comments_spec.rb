@@ -15,7 +15,7 @@ RSpec.describe 'comments interacting', type: :feature do
     context 'When I press comment the post' do
       it 'creates a new comment' do
         visit '/'
-        fill_in "Content", with: 'Hello i\'s my new comment'
+        fill_in 'Content', with: 'Hello i\'s my new comment'
         click_button 'Create Comment'
         expect(page).to have_content('Comment was successfully created.')
       end

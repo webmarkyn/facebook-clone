@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
@@ -7,15 +9,15 @@ RSpec.describe Comment, type: :model do
   end
   describe 'not valid' do
     context 'when' do
-      it "has no author" do
+      it 'has no author' do
         @comment = @post.comments.build content: 'Hello World!Here'
         expect(@comment).to_not be_valid
       end
-      it "has no content" do
+      it 'has no content' do
         @comment = @post.comments.build user_id: @user.id
         expect(@comment).to_not be_valid
       end
-      it "has no post" do
+      it 'has no post' do
         @comment = Comment.new user_id: @user.id, content: 'Hello World I\'m here'
         expect(@comment).to_not be_valid
       end

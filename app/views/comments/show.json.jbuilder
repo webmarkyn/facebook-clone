@@ -1,1 +1,3 @@
-json.partial! "comments/comment", comment: @comment
+# frozen_string_literal: true
+
+json.partial! 'comments/comment', comment: @comment

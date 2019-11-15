@@ -69,7 +69,7 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
     @likes = @post.likes
-    @liked_by =  @likes.find { |like| like.user_id == current_user.id}
+    @liked_by = @likes.find { |like| like.user_id == current_user.id }
   end
 
   def check_user
