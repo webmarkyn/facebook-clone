@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'capybara/rspec'
 
-RSpec.describe "the signin process", type: :feature do
+RSpec.describe 'the signin process', type: :feature do
   before :each do
     User.create(email: 'something@cool.com', password: 'something123', password_confirmation: 'something123')
   end

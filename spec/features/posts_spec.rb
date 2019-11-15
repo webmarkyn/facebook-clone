@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'capybara/rspec'
 
-RSpec.describe "posts interacting", type: :feature do
+RSpec.describe 'posts interacting', type: :feature do
   before :each do
     @user = User.create(email: 'something@cool.com', password: 'something123', password_confirmation: 'something123')
     @post = @user.posts.create(context: 'Test post 1')
