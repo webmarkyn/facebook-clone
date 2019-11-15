@@ -1,0 +1,8 @@
+<div class="post_comment">
+<p><b><%= comment.user.email %></b></p>
+<p><%= comment.content %></p>
+<% if comment.user_id == current_user.id %>
+  <p><%= link_to "Delete comment", post_comment_path(comment.post, comment), method: :delete %></p>
+<% end %>
+<hr>
+</div>

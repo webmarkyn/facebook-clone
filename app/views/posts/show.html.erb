@@ -1,14 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Context:</strong>
-  <%= @post.context %>
-</p>
+<%= render @post %>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user.email%>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

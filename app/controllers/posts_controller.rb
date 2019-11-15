@@ -68,6 +68,8 @@ class PostsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_post
     @post = Post.find(params[:id])
+    @likes = @post.likes
+    @liked_by =  @likes.find { |like| like.user_id == current_user.id}
   end
 
   def check_user

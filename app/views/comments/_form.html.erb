@@ -1,4 +1,4 @@
-<%= form_with(model: comment, local: true) do |form| %>
+<%= form_with(model: comment, local: true, url: post_comments_path(post), method: :post) do |form| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -12,13 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :post_id %>
-    <%= form.number_field :post_id %>
+    <%= form.label :content %>
+    <%= form.text_area :content %>
   </div>
 
   <div class="actions">

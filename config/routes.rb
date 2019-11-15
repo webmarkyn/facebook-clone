@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :comments
-  resources :likes
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:create, :destroy, :edit, :update]
+    resources :likes, only: [:create, :destroy]
+  end
   devise_for :users
   authenticated :user do
     root 'posts#index', as: 'logged_in_root'

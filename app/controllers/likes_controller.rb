@@ -12,11 +12,6 @@ class LikesController < ApplicationController
   def show
   end
 
-  # GET /likes/new
-  def new
-    @like = Like.new
-  end
-
   # GET /likes/1/edit
   def edit
   end
@@ -24,15 +19,15 @@ class LikesController < ApplicationController
   # POST /likes
   # POST /likes.json
   def create
-    @like = Like.new(like_params)
+    @post = Post.find(params[:post_id])
+    @user_id = current_user.id
+    @like = @post.likes.build user_id: @user_id
 
     respond_to do |format|
       if @like.save
-        format.html { redirect_to @like, notice: 'Like was successfully created.' }
-        format.json { render :show, status: :created, location: @like }
+        format.html { redirect_to @post, notice: 'Like was successfully created.' }
       else
-        format.html { render :new }
-        format.json { render json: @like.errors, status: :unprocessable_entity }
+        format.html { redirect_to @post, alert: 'Something went wrong' }
       end
     end
   end
@@ -54,10 +49,10 @@ class LikesController < ApplicationController
   # DELETE /likes/1
   # DELETE /likes/1.json
   def destroy
+    @post = Post.find(params[:post_id])
     @like.destroy
     respond_to do |format|
-      format.html { redirect_to likes_url, notice: 'Like was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to @post, notice: 'Like was successfully destroyed.' }
     end
   end
 
