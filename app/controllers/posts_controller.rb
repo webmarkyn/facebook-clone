@@ -3,6 +3,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
   before_action :authenticate_user!
+  before_action :check_user, only: [:edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
@@ -67,6 +68,10 @@ class PostsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def check_user
+    redirect_to logged_in_root_path, alert: "It's not your post!" unless @post.user.id == current_user.id
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
