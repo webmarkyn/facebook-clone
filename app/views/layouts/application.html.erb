@@ -15,10 +15,12 @@
   <nav>
     <ul>
       <% if user_signed_in? %>
-        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "Sign out",  destroy_user_session_path, method: :delete %></li>
         <li><%= link_to "Home", posts_path %></li>
         <li><%= link_to "New Post", new_post_path %></li>
         <li><%= link_to "Users", users_path %></li>
+        <li><%= link_to "Friends", users_friends_path(current_user) %></li>
+        <li><%= link_to "Pending friend requests", user_friend_requests_path %></li>
       <%else %>
         <li><%= link_to "Sign in", new_user_session_path %></li>
       <%end %>

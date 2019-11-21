@@ -11,6 +11,17 @@
   <% @users.each do |user| %>
     <tr>
       <td><%= user.email %></td>
+      <% unless current_user == user %>
+        <% if current_user.friend? user %>
+          <td style="color: greenyellow; text-shadow: 1px 1px 1px #000">You are already friends</td>
+        <% elsif current_user.request_sent? user %>
+          <td style="color: yellow; text-shadow: 1px 1px 1px #000">You already have sent request</td>
+        <% elsif  current_user.request_gotten? user%>
+          <td style="color: yellow; text-shadow: 1px 1px 1px #000">You already have request from this user</td>
+        <% else %>
+          <td><%= link_to "Send Friend request", user_friendships_path(user.id), method: :post%></td>
+        <% end %>
+      <% end %>
     </tr>
   <% end %>
   </tbody>

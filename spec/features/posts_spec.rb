@@ -33,8 +33,8 @@ RSpec.describe 'posts interacting', type: :feature do
     end
   end
   describe 'editing post' do
-    context 'When I press "Destory" button' do
-      it 'destroys a post', js: true do
+    context 'When I press "Edit" button' do
+      it 'edits a post' do
         visit '/'
         click_link 'Edit'
         fill_in 'Context', with: 'Just some text'
