@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy, :edit, :update]
     resources :likes, only: [:create, :destroy]
   end
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   authenticated :user do
     root 'posts#index', as: 'logged_in_root'
