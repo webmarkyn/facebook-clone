@@ -9,12 +9,11 @@ class Friendship < ApplicationRecord
   def mutual_default
     self.mutual = false unless mutual
   end
+
   def duplicated_check
-    @test = Friendship.where(requested_user_id: self.requesting_user_id,
-                             requesting_user_id: self.requested_user_id).empty? && Friendship.where(requested_user_id: self.requested_user_id,
-                                                                                                    requesting_user_id: self.requesting_user_id).empty?
-    unless @test
-        errors.add(:base, "Same request already exists")
-    end
+    @test = Friendship.where(requested_user_id: requesting_user_id,
+                             requesting_user_id: requested_user_id).empty? && Friendship.where(requested_user_id: requested_user_id,
+                                                                                               requesting_user_id: requesting_user_id).empty?
+    errors.add(:base, 'Same request already exists') unless @test
   end
 end
