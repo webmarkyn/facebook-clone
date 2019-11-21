@@ -12,8 +12,9 @@ class Friendship < ApplicationRecord
 
   def duplicated_check
     @test = Friendship.where(requested_user_id: requesting_user_id,
-                             requesting_user_id: requested_user_id).empty? && Friendship.where(requested_user_id: requested_user_id,
-                                                                                               requesting_user_id: requesting_user_id).empty?
+                             requesting_user_id: requested_user_id).empty? &&
+                             Friendship.where(requested_user_id: requested_user_id,
+                             requesting_user_id: requesting_user_id).empty?
     errors.add(:base, 'Same request already exists') unless @test
   end
 end
