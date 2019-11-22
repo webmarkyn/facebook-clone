@@ -13,7 +13,7 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <nav>
-    <ul>
+    <ul class="nav-menu">
       <% if user_signed_in? %>
         <li><%= link_to "Sign out",  destroy_user_session_path, method: :delete %></li>
         <li><%= link_to "Home", posts_path %></li>
@@ -25,6 +25,26 @@
         <li><%= link_to "Sign in", new_user_session_path %></li>
       <%end %>
     </ul>
+
+    <% if user_signed_in? %>
+      <% @requests = current_user.friend_requests%>
+      <div class="notifications">
+        <div class="notifications-head">
+          <p>Notifications: <span class="notifications-counter"><%= @requests.count %></span></p>
+        </div>
+        <div class="notifications-main">
+          <ul class="requests-list">
+            <% @requests.each do |user| %>
+              <li class="requests-list-item">
+                <p><%= user.email %></p>
+                <%= link_to "Accept", accept_friend_request_path(user.id, current_user.id), method: :put, class: 'greenlink'%>
+                <%= link_to "Decline", delete_friend_request_path(user.id, current_user.id), method: :delete, class: 'redlink' %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
   </nav>
   <%= yield %>
   </body>
