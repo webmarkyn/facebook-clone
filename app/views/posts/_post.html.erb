@@ -1,0 +1,22 @@
+<div class="post" style="border: 1px solid #ccc; margin-bottom: 35px">
+  <div class="post_user"><%= post.user.email %></div>
+  <div class="post_content"><%= post.context %></div>
+  <div class="post_actions">
+    <ul style="display: flex; width: 200px; justify-content: space-between; padding-left: 0; list-style: none">
+      <li>Likes: <%= post.likes.count %></li>
+      <li><%= link_to 'Show', post %></li>
+      <% @liked =  liked?(post)%>
+      <% if @liked %>
+        <li><%= link_to 'Unlike', post_like_path(post, @liked ), method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'Like', post_likes_path(post), method: :post %></li>
+      <%end %>
+      <% if post.user.id == current_user.id %>
+        <li><%= link_to 'Edit', edit_post_path(post) %></li>
+        <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <%end %>
+    </ul>
+  </div>
+  <%= render post.comments %>
+  <%= render 'comments/form', comment: post.comments.build, post: post %>
+</div>
