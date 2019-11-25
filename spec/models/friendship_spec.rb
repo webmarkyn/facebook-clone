@@ -19,6 +19,10 @@ RSpec.describe Friendship, type: :model do
         @friendship = @user2.outcoming_requests.build requested_user_id: @user1.id
         expect(@friendship).to_not be_valid
       end
+      it 'user\'s id\'s are same' do
+        @friendship = @user1.outcoming_requests.build requested_user_id: @user1.id
+        expect(@friendship).to_not be_valid
+      end
     end
   end
 

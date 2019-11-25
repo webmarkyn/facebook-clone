@@ -8,7 +8,10 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @all_posts = [] + current_user.posts
+    current_user.friends.each { |friend| friend.posts.each { |post| @all_posts.push post } }
+    @posts = @all_posts
+    puts @posts.inspect
   end
 
   # GET /posts/1

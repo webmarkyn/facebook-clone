@@ -9,7 +9,7 @@ RSpec.describe 'the signin process', type: :feature do
   end
 
   it 'signs me in' do
-    visit '/'
+    visit 'users/sign_in'
     within '#new_user' do
       fill_in 'Email', with: 'something@cool.com'
       fill_in 'Password', with: 'something123'
