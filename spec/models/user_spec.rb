@@ -44,29 +44,32 @@ RSpec.describe User, type: :model do
     it 'returns an array of friend requests' do
       expect(@user1.friend_requests[0]).to eq @user3
     end
-    describe 'friend? method' do
-      it 'returns true if user provided is a friend' do
-        expect(@user1.friend?(@user4)).to eq true
-      end
-      it 'returns falst if user provided isn\'t a friend' do
-        expect(@user1.friend?(@user3)).to eq false
-      end
+  end
+
+  context 'request_sent? method' do
+    it 'returns true if user provided is a friend' do
+      expect(@user1.request_sent?(@user2)).to eq true
     end
-    describe 'request_gotten? method' do
-      it 'returns true if user has request from privied user' do
-        expect(@user1.request_gotten?(@user3)).to eq true
-      end
-      it 'returns false if user has no request from privied user' do
-        expect(@user1.request_gotten?(@user4)).to eq false
-      end
+    it 'returns false if user provided isn\'t a friend' do
+      expect(@user1.request_sent?(@user3)).to eq false
     end
-    describe 'request_sent? method' do
-      it 'returns true if user provided is a friend' do
-        expect(@user1.request_sent?(@user2)).to eq true
-      end
-      it 'returns false if user provided isn\'t a friend' do
-        expect(@user1.request_sent?(@user3)).to eq false
-      end
+  end
+
+  context 'request_gotten? method' do
+    it 'returns true if user has request from privied user' do
+      expect(@user1.request_gotten?(@user3)).to eq true
+    end
+    it 'returns false if user has no request from privied user' do
+      expect(@user1.request_gotten?(@user4)).to eq false
+    end
+  end
+
+  context 'friend? method' do
+    it 'returns true if user provided is a friend' do
+      expect(@user1.friend?(@user4)).to eq true
+    end
+    it 'returns falst if user provided isn\'t a friend' do
+      expect(@user1.friend?(@user3)).to eq false
     end
   end
 
