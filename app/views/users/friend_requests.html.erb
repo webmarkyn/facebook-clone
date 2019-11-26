@@ -1,0 +1,8 @@
+<h1>Your Friend requests </h1>
+<% @friend_requests.each  do |friend| %>
+  <div>
+    <span><%= friend.email %></span>
+    <%= link_to "Accept Request", accept_friend_request_path(friend.id, current_user.id), method: :put %>
+  </div>
+<% end %>
+
