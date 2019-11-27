@@ -1,7 +1,7 @@
 # PROJECT: FACEBOOK CLONE from Microverse
 From the Microverse Ruby on rails curriculum
 
-Link to Heroku: https://github.com/webmarkyn/facebook-clone.git
+Link to Heroku: https://floating-wave-46859.herokuapp.com/
 
 Following [this link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project) from The Odin Project 
 
