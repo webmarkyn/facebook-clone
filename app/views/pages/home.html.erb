@@ -1,2 +1,24 @@
-<h1>Home</h1>
-<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FacebookClone</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div id="welcome-page">
+        <h1>Welcome to FaceBookClone</h1>
+        <div class="signup-links">
+            <div class="facebook-signup">
+                <%= link_to "Sign in", new_user_session_path %>
+            </div>
+            <div class="usuall-signup">
+                <%= link_to "Sign up", new_user_registration_path%>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
