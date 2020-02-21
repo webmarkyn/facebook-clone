@@ -10,12 +10,13 @@
   </head>
 
   <body>
+  <div id="main-container">
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <nav>
     <ul class="nav-menu">
       <% if user_signed_in? %>
-        <li><%= link_to "Sign out",  destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "Sign out",  destroy_user_session_path, :method => :delete %></li>
         <li><%= link_to "Home", posts_path %></li>
         <li><%= link_to "New Post", new_post_path %></li>
         <li><%= link_to "Users", users_path %></li>
@@ -46,8 +47,9 @@
       </div>
     <% end %>
   </nav>
-  <div id="main-container">
-  <%= yield %>
+  <div id="page-content">
+    <%= yield %>
+  </div>
   </div>
   </body>
 </html>

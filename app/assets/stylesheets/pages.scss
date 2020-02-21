@@ -6,12 +6,29 @@ body {
     padding: 0;
 }
 
-.signup-links {
+#welcome-page {
     height: 100vh;
+    max-width: 1200px;
+    background: #2c3e50;
+    margin: 0 auto;
+    position: relative;
+
+    h1 {
+        position: absolute;
+        margin: 0;
+        padding-top: 200px;
+        text-align: center;
+        width: 100%;
+        letter-spacing: 4.5px;
+        word-spacing: 10px;
+    }
+}
+
+.signup-links {
     width: 100%;
     display: flex;
-    background: #3498db;
     flex-wrap: wrap;
+    height: 100%;
 }
 
 .facebook-signup, .usuall-signup{
