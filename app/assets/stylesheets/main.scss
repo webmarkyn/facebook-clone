@@ -1,14 +1,51 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #3498db;
+  color: #ecf0f1;
+}
+
+#main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 nav {
   display: flex;
-  background: #ccc;
+  background: #2c3e50;
   height: 3.3em;
   position: relative;
 
   .nav-menu {
+    margin: 0;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
     display: flex;
     li {
+      flex-grow: 0;
+      // width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       list-style: none;
       margin: 0 12px;
+      height: 100%;
+      border-bottom: 1px solid #bdc3c7;
+
+      & a {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        color: #ecf0f1;
+        text-decoration: none;
+        font-size: 18px;
+      }
     }
   }
   .notifications {
