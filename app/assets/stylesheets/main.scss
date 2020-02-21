@@ -3,6 +3,21 @@ body {
   padding: 0;
   background: #3498db;
   color: #ecf0f1;
+
+  a {
+    color: #2ecc71
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  textarea {
+    width: 100%;
+    resize: none;
+    height: 50px;
+  }
 }
 
 #main-container {
@@ -27,6 +42,9 @@ nav {
   width: 250px;
   flex-direction: column;
 
+  h1 {
+    text-align: center;
+  }
   .nav-menu {
     margin: 0;
     display: flex;
@@ -83,9 +101,8 @@ nav {
       position: relative;
       bottom: 0;
       left: 0;
-      top: 100%;
       display: none;
-      background-color: #999999;
+      background-color: #7f8c8d;
     }
 
     &:hover {
@@ -95,14 +112,11 @@ nav {
         li {
           list-style: none;
 
-          a {
-            text-shadow: 1px 1px 1px #000;
-          }
           .greenlink {
-            color: greenyellow;
+            color: #2ecc71;
           }
           .redlink {
-            color: red
+            color: #c0392b
           }
         }
       }
