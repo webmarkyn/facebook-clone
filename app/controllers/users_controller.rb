@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   def friends
     @user = User.find(params[:user_id])
     @friends = @user.friends
-    puts "THIS IS #{@friends}"
   end
 
   def friend_requests

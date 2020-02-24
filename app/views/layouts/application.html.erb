@@ -11,8 +11,6 @@
 
   <body>
   <div id="main-container">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
   <nav>
     <h1>FacebookClone</h1>
     <ul class="nav-menu">
@@ -49,6 +47,8 @@
     <% end %>
   </nav>
   <div id="page-content">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </div>
   </div>
