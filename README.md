@@ -1,4 +1,6 @@
 # PROJECT: FACEBOOK CLONE from Microverse
+This is a clone of Facebook social network built with Ruby and Ruby on Rails. You are able to add posts, comments, like posts and add\remove friends.
+
 From the Microverse Ruby on rails curriculum
 
 Link to Heroku: https://floating-wave-46859.herokuapp.com/
@@ -11,7 +13,25 @@ This project will give you a chance to take a relatively high level set of requi
 1. git clone https://github.com/webmarkyn/facebook-clone.git
 2. cd facebook-clone
 3. bundle install
-4. rails server
+4. rails server  
 
-### Authors: 
-This project was executed by Mark Baidebura and Andres Rodriguez,  students of Microverse. 
+## Authors
+
+👤 **Mark Baidebura**
+
+- Github: [@webmarkyn](https://github.com/webmarkyn)
+- Linkedin: [linkedin](https://www.linkedin.com/in/mark-baidebura/)
+- Twitter: [@webmarkyn](https://twitter.com/webmarkyn)
+
+👤 **Andres Rodriguez**
+- Github: [@andynarf](https://github.com/andynarf)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/webmarkyn/facebook-clone/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
