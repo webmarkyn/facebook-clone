@@ -34,6 +34,8 @@ In project root folder run `bundle exec rspec spec`
 
 👤 **Andres Rodriguez**
 - Github: [@andynarf](https://github.com/andynarf)
+- Linkedin: [linkedin](https://www.linkedin.com/in/andres-dev/)
+
 
 ## 🤝 Contributing
 
